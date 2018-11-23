@@ -1,4 +1,4 @@
-Source: bitcoin
+Source: ascension
 Section: utils
 Priority: optional
 Maintainer: Jonas Smedegaard <dr@jones.dk>
@@ -24,44 +24,44 @@ Build-Depends: debhelper,
  python
 Standards-Version: 3.9.2
 Homepage: https://bitcoincore.org/
-Vcs-Git: git://github.com/bitcoin/bitcoin.git
-Vcs-Browser: https://github.com/bitcoin/bitcoin
+Vcs-Git: git://github.com/ascensioncoin/AscensionCoin.git
+Vcs-Browser: https://github.com/ascensioncoin/AscensionCoin
 
-Package: bitcoind
+Package: ascensiond
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - daemon
- Bitcoin is an experimental new digital currency that enables instant
- payments to anyone, anywhere in the world. Bitcoin uses peer-to-peer
+ Ascension is an experimental new digital currency that enables instant
+ payments to anyone, anywhere in the world. Ascension uses peer-to-peer
  technology to operate with no central authority: managing transactions
- and issuing money are carried out collectively by the network. Bitcoin Core
+ and issuing money are carried out collectively by the network. Ascension Core
  is the name of the open source software which enables the use of this currency.
  .
- This package provides the daemon, bitcoind, and the CLI tool
- bitcoin-cli to interact with the daemon.
+ This package provides the daemon, ascensiond, and the CLI tool
+ ascension-cli to interact with the daemon.
 
-Package: bitcoin-qt
+Package: ascension-qt
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - Qt GUI
- Bitcoin is an experimental new digital currency that enables instant
- payments to anyone, anywhere in the world. Bitcoin uses peer-to-peer
+ Ascension is an experimental new digital currency that enables instant
+ payments to anyone, anywhere in the world. Ascension uses peer-to-peer
  technology to operate with no central authority: managing transactions
- and issuing money are carried out collectively by the network. Bitcoin Core
+ and issuing money are carried out collectively by the network. Ascension Core
  is the name of the open source software which enables the use of this currency.
  .
- This package provides Bitcoin-Qt, a GUI for Bitcoin based on Qt.
+ This package provides Ascension-Qt, a GUI for Ascension based on Qt.
 
-Package: bitcoin-tx
+Package: ascension-tx
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer digital currency - standalone transaction tool
- Bitcoin is an experimental new digital currency that enables instant
- payments to anyone, anywhere in the world. Bitcoin uses peer-to-peer
+ Ascension is an experimental new digital currency that enables instant
+ payments to anyone, anywhere in the world. Ascension uses peer-to-peer
  technology to operate with no central authority: managing transactions
- and issuing money are carried out collectively by the network. Bitcoin Core
+ and issuing money are carried out collectively by the network. Ascension Core
  is the name of the open source software which enables the use of this currency.
  .
- This package provides bitcoin-tx, a command-line transaction creation
- tool which can be used without a bitcoin daemon.  Some means of
+ This package provides ascension-tx, a command-line transaction creation
+ tool which can be used without a ascension daemon.  Some means of
  exchanging minimal transaction data with peers is still required.

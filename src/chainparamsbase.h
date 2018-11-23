@@ -9,8 +9,8 @@
 #include <vector>
 
 /**
- * CBaseChainParams defines the base parameters (shared between bitcoin-cli and bitcoind)
- * of a given instance of the Bitcoin system.
+ * CBaseChainParams defines the base parameters (shared between ascension-cli and ascensiond)
+ * of a given instance of the Ascension system.
  */
 class CBaseChainParams
 {

@@ -1,6 +1,6 @@
 [Protocol]
-exec=bitcoin-qt '%u'
-protocol=bitcoin
+exec=ascension-qt '%u'
+protocol=ascension
 input=none
 output=none
 helper=true

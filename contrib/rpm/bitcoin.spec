@@ -13,7 +13,7 @@
 %endif
 %endif
 
-Name:		bitcoin
+Name:		ascension
 Version:	0.12.0
 Release:	2%{?dist}
 Summary:	Peer to Peer Cryptographic Currency
@@ -21,24 +21,24 @@ Summary:	Peer to Peer Cryptographic Currency
 Group:		Applications/System
 License:	MIT
 URL:		https://bitcoin.org/
-Source0:	https://bitcoin.org/bin/bitcoin-core-%{version}/bitcoin-%{version}.tar.gz
+Source0:	https://bitcoin.org/bin/ascension-core-%{version}/ascension-%{version}.tar.gz
 Source1:	http://download.oracle.com/berkeley-db/db-%{bdbv}.NC.tar.gz
 
-Source10:	https://raw.githubusercontent.com/bitcoin/bitcoin/v%{version}/contrib/debian/examples/bitcoin.conf
+Source10:	https://raw.githubusercontent.com/ascension/ascension/v%{version}/contrib/debian/examples/ascension.conf
 
 #man pages
-Source20:	https://raw.githubusercontent.com/bitcoin/bitcoin/v%{version}/contrib/debian/manpages/bitcoind.1
-Source21:	https://raw.githubusercontent.com/bitcoin/bitcoin/v%{version}/contrib/debian/manpages/bitcoin-cli.1
-Source22:	https://raw.githubusercontent.com/bitcoin/bitcoin/v%{version}/contrib/debian/manpages/bitcoin-qt.1
-Source23:	https://raw.githubusercontent.com/bitcoin/bitcoin/v%{version}/contrib/debian/manpages/bitcoin.conf.5
+Source20:	https://raw.githubusercontent.com/ascension/ascension/v%{version}/contrib/debian/manpages/ascensiond.1
+Source21:	https://raw.githubusercontent.com/ascension/ascension/v%{version}/contrib/debian/manpages/ascension-cli.1
+Source22:	https://raw.githubusercontent.com/ascension/ascension/v%{version}/contrib/debian/manpages/ascension-qt.1
+Source23:	https://raw.githubusercontent.com/ascension/ascension/v%{version}/contrib/debian/manpages/ascension.conf.5
 
 #selinux
-Source30:	https://raw.githubusercontent.com/bitcoin/bitcoin/v%{version}/contrib/rpm/bitcoin.te
-# Source31 - what about bitcoin-tx and bench_bitcoin ???
-Source31:	https://raw.githubusercontent.com/bitcoin/bitcoin/v%{version}/contrib/rpm/bitcoin.fc
-Source32:	https://raw.githubusercontent.com/bitcoin/bitcoin/v%{version}/contrib/rpm/bitcoin.if
+Source30:	https://raw.githubusercontent.com/ascension/ascension/v%{version}/contrib/rpm/ascension.te
+# Source31 - what about ascension-tx and bench_ascension ???
+Source31:	https://raw.githubusercontent.com/ascension/ascension/v%{version}/contrib/rpm/ascension.fc
+Source32:	https://raw.githubusercontent.com/ascension/ascension/v%{version}/contrib/rpm/ascension.if
 
-Source100:	https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg
+Source100:	https://upload.wikimedia.org/wikipedia/commons/4/46/Ascension.svg
 
 %if 0%{?_use_libressl:1}
 BuildRequires:	libressl-devel
@@ -51,13 +51,13 @@ BuildRequires:	autoconf automake libtool
 BuildRequires:	libevent-devel
 
 
-Patch0:		bitcoin-0.12.0-libressl.patch
+Patch0:		ascension-0.12.0-libressl.patch
 
 
 %description
-Bitcoin is a digital cryptographic currency that uses peer-to-peer technology to
+Ascension is a digital cryptographic currency that uses peer-to-peer technology to
 operate with no central authority or banks; managing transactions and the
-issuing of bitcoins is carried out collectively by the network.
+issuing of ascensions is carried out collectively by the network.
 
 %if %{_buildqt}
 %package core
@@ -80,17 +80,17 @@ BuildRequires:	%{_bindir}/inkscape
 BuildRequires:	%{_bindir}/convert
 
 %description core
-Bitcoin is a digital cryptographic currency that uses peer-to-peer technology to
+Ascension is a digital cryptographic currency that uses peer-to-peer technology to
 operate with no central authority or banks; managing transactions and the
-issuing of bitcoins is carried out collectively by the network.
+issuing of ascensions is carried out collectively by the network.
 
 This package contains the Qt based graphical client and node. If you are looking
-to run a Bitcoin wallet, this is probably the package you want.
+to run a Ascension wallet, this is probably the package you want.
 %endif
 
 
 %package libs
-Summary:	Bitcoin shared libraries
+Summary:	Ascension shared libraries
 Group:		System Environment/Libraries
 
 %description libs
@@ -101,7 +101,7 @@ functionality.
 Unless you know need this package, you probably do not.
 
 %package devel
-Summary:	Development files for bitcoin
+Summary:	Development files for ascension
 Group:		Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
 
@@ -113,9 +113,9 @@ that wants to link against that library, then you need this package installed.
 Most people do not need this package installed.
 
 %package server
-Summary:	The bitcoin daemon
+Summary:	The ascension daemon
 Group:		System Environment/Daemons
-Requires:	bitcoin-utils = %{version}-%{release}
+Requires:	ascension-utils = %{version}-%{release}
 Requires:	selinux-policy policycoreutils-python
 Requires(pre):	shadow-utils
 Requires(post):	%{_sbindir}/semodule %{_sbindir}/restorecon %{_sbindir}/fixfiles %{_sbindir}/sestatus
@@ -125,34 +125,34 @@ BuildRequires:	checkpolicy
 BuildRequires:	%{_datadir}/selinux/devel/Makefile
 
 %description server
-This package provides a stand-alone bitcoin-core daemon. For most users, this
+This package provides a stand-alone ascension-core daemon. For most users, this
 package is only needed if they need a full-node without the graphical client.
 
 Some third party wallet software will want this package to provide the actual
-bitcoin-core node they use to connect to the network.
+ascension-core node they use to connect to the network.
 
-If you use the graphical bitcoin-core client then you almost certainly do not
+If you use the graphical ascension-core client then you almost certainly do not
 need this package.
 
 %package utils
-Summary:	Bitcoin utilities
+Summary:	Ascension utilities
 Group:		Applications/System
 
 %description utils
 This package provides several command line utilities for interacting with a
-bitcoin-core daemon.
+ascension-core daemon.
 
-The bitcoin-cli utility allows you to communicate and control a bitcoin daemon
-over RPC, the bitcoin-tx utility allows you to create a custom transaction, and
-the bench_bitcoin utility can be used to perform some benchmarks.
+The ascension-cli utility allows you to communicate and control a ascension daemon
+over RPC, the ascension-tx utility allows you to create a custom transaction, and
+the bench_ascension utility can be used to perform some benchmarks.
 
-This package contains utilities needed by the bitcoin-server package.
+This package contains utilities needed by the ascension-server package.
 
 
 %prep
 %setup -q
 %patch0 -p1 -b .libressl
-cp -p %{SOURCE10} ./bitcoin.conf.example
+cp -p %{SOURCE10} ./ascension.conf.example
 tar -zxf %{SOURCE1}
 cp -p db-%{bdbv}.NC/LICENSE ./db-%{bdbv}.NC-LICENSE
 mkdir db4 SELinux
@@ -173,7 +173,7 @@ make %{?_smp_mflags}
 pushd SELinux
 for selinuxvariant in %{selinux_variants}; do
 	make NAME=${selinuxvariant} -f %{_datadir}/selinux/devel/Makefile
-	mv bitcoin.pp bitcoin.pp.${selinuxvariant}
+	mv ascension.pp ascension.pp.${selinuxvariant}
 	make NAME=${selinuxvariant} -f %{_datadir}/selinux/devel/Makefile clean
 done
 popd
@@ -183,42 +183,42 @@ popd
 make install DESTDIR=%{buildroot}
 
 mkdir -p -m755 %{buildroot}%{_sbindir}
-mv %{buildroot}%{_bindir}/bitcoind %{buildroot}%{_sbindir}/bitcoind
+mv %{buildroot}%{_bindir}/ascensiond %{buildroot}%{_sbindir}/ascensiond
 
 # systemd stuff
 mkdir -p %{buildroot}%{_tmpfilesdir}
-cat <<EOF > %{buildroot}%{_tmpfilesdir}/bitcoin.conf
-d /run/bitcoind 0750 bitcoin bitcoin -
+cat <<EOF > %{buildroot}%{_tmpfilesdir}/ascension.conf
+d /run/ascensiond 0750 ascension ascension -
 EOF
-touch -a -m -t 201504280000 %{buildroot}%{_tmpfilesdir}/bitcoin.conf
+touch -a -m -t 201504280000 %{buildroot}%{_tmpfilesdir}/ascension.conf
 
 mkdir -p %{buildroot}%{_sysconfdir}/sysconfig
-cat <<EOF > %{buildroot}%{_sysconfdir}/sysconfig/bitcoin
-# Provide options to the bitcoin daemon here, for example
+cat <<EOF > %{buildroot}%{_sysconfdir}/sysconfig/ascension
+# Provide options to the ascension daemon here, for example
 # OPTIONS="-testnet -disable-wallet"
 
 OPTIONS=""
 
 # System service defaults.
 # Don't change these unless you know what you're doing.
-CONFIG_FILE="%{_sysconfdir}/bitcoin/bitcoin.conf"
-DATA_DIR="%{_localstatedir}/lib/bitcoin"
-PID_FILE="/run/bitcoind/bitcoind.pid"
+CONFIG_FILE="%{_sysconfdir}/ascension/ascension.conf"
+DATA_DIR="%{_localstatedir}/lib/ascension"
+PID_FILE="/run/ascensiond/ascensiond.pid"
 EOF
-touch -a -m -t 201504280000 %{buildroot}%{_sysconfdir}/sysconfig/bitcoin
+touch -a -m -t 201504280000 %{buildroot}%{_sysconfdir}/sysconfig/ascension
 
 mkdir -p %{buildroot}%{_unitdir}
-cat <<EOF > %{buildroot}%{_unitdir}/bitcoin.service
+cat <<EOF > %{buildroot}%{_unitdir}/ascension.service
 [Unit]
-Description=Bitcoin daemon
+Description=Ascension daemon
 After=syslog.target network.target
 
 [Service]
 Type=forking
-ExecStart=%{_sbindir}/bitcoind -daemon -conf=\${CONFIG_FILE} -datadir=\${DATA_DIR} -pid=\${PID_FILE} \$OPTIONS
-EnvironmentFile=%{_sysconfdir}/sysconfig/bitcoin
-User=bitcoin
-Group=bitcoin
+ExecStart=%{_sbindir}/ascensiond -daemon -conf=\${CONFIG_FILE} -datadir=\${DATA_DIR} -pid=\${PID_FILE} \$OPTIONS
+EnvironmentFile=%{_sysconfdir}/sysconfig/ascension
+User=ascension
+Group=ascension
 
 Restart=on-failure
 PrivateTmp=true
@@ -230,63 +230,63 @@ StartLimitBurst=5
 [Install]
 WantedBy=multi-user.target
 EOF
-touch -a -m -t 201504280000 %{buildroot}%{_unitdir}/bitcoin.service
+touch -a -m -t 201504280000 %{buildroot}%{_unitdir}/ascension.service
 #end systemd stuff
 
-mkdir %{buildroot}%{_sysconfdir}/bitcoin
-mkdir -p %{buildroot}%{_localstatedir}/lib/bitcoin
+mkdir %{buildroot}%{_sysconfdir}/ascension
+mkdir -p %{buildroot}%{_localstatedir}/lib/ascension
 
 #SELinux
 for selinuxvariant in %{selinux_variants}; do
 	install -d %{buildroot}%{_datadir}/selinux/${selinuxvariant}
-	install -p -m 644 SELinux/bitcoin.pp.${selinuxvariant} %{buildroot}%{_datadir}/selinux/${selinuxvariant}/bitcoin.pp
+	install -p -m 644 SELinux/ascension.pp.${selinuxvariant} %{buildroot}%{_datadir}/selinux/${selinuxvariant}/ascension.pp
 done
 
 %if %{_buildqt}
 # qt icons
-install -D -p share/pixmaps/bitcoin.ico %{buildroot}%{_datadir}/pixmaps/bitcoin.ico
+install -D -p share/pixmaps/ascension.ico %{buildroot}%{_datadir}/pixmaps/ascension.ico
 install -p share/pixmaps/nsis-header.bmp %{buildroot}%{_datadir}/pixmaps/
 install -p share/pixmaps/nsis-wizard.bmp %{buildroot}%{_datadir}/pixmaps/
-install -p %{SOURCE100} %{buildroot}%{_datadir}/pixmaps/bitcoin.svg
-%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/bitcoin16.png -w16 -h16
-%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/bitcoin32.png -w32 -h32
-%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/bitcoin64.png -w64 -h64
-%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/bitcoin128.png -w128 -h128
-%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/bitcoin256.png -w256 -h256
-%{_bindir}/convert -resize 16x16 %{buildroot}%{_datadir}/pixmaps/bitcoin256.png %{buildroot}%{_datadir}/pixmaps/bitcoin16.xpm
-%{_bindir}/convert -resize 32x32 %{buildroot}%{_datadir}/pixmaps/bitcoin256.png %{buildroot}%{_datadir}/pixmaps/bitcoin32.xpm
-%{_bindir}/convert -resize 64x64 %{buildroot}%{_datadir}/pixmaps/bitcoin256.png %{buildroot}%{_datadir}/pixmaps/bitcoin64.xpm
-%{_bindir}/convert -resize 128x128 %{buildroot}%{_datadir}/pixmaps/bitcoin256.png %{buildroot}%{_datadir}/pixmaps/bitcoin128.xpm
-%{_bindir}/convert %{buildroot}%{_datadir}/pixmaps/bitcoin256.png %{buildroot}%{_datadir}/pixmaps/bitcoin256.xpm
+install -p %{SOURCE100} %{buildroot}%{_datadir}/pixmaps/ascension.svg
+%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/ascension16.png -w16 -h16
+%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/ascension32.png -w32 -h32
+%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/ascension64.png -w64 -h64
+%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/ascension128.png -w128 -h128
+%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/ascension256.png -w256 -h256
+%{_bindir}/convert -resize 16x16 %{buildroot}%{_datadir}/pixmaps/ascension256.png %{buildroot}%{_datadir}/pixmaps/ascension16.xpm
+%{_bindir}/convert -resize 32x32 %{buildroot}%{_datadir}/pixmaps/ascension256.png %{buildroot}%{_datadir}/pixmaps/ascension32.xpm
+%{_bindir}/convert -resize 64x64 %{buildroot}%{_datadir}/pixmaps/ascension256.png %{buildroot}%{_datadir}/pixmaps/ascension64.xpm
+%{_bindir}/convert -resize 128x128 %{buildroot}%{_datadir}/pixmaps/ascension256.png %{buildroot}%{_datadir}/pixmaps/ascension128.xpm
+%{_bindir}/convert %{buildroot}%{_datadir}/pixmaps/ascension256.png %{buildroot}%{_datadir}/pixmaps/ascension256.xpm
 touch %{buildroot}%{_datadir}/pixmaps/*.png -r %{SOURCE100}
 touch %{buildroot}%{_datadir}/pixmaps/*.xpm -r %{SOURCE100}
 
 # Desktop File - change the touch timestamp if modifying
 mkdir -p %{buildroot}%{_datadir}/applications
-cat <<EOF > %{buildroot}%{_datadir}/applications/bitcoin-core.desktop
+cat <<EOF > %{buildroot}%{_datadir}/applications/ascension-core.desktop
 [Desktop Entry]
 Encoding=UTF-8
-Name=Bitcoin
-Comment=Bitcoin P2P Cryptocurrency
-Comment[fr]=Bitcoin, monnaie virtuelle cryptographique pair à pair
-Comment[tr]=Bitcoin, eşten eşe kriptografik sanal para birimi
-Exec=bitcoin-qt %u
+Name=Ascension
+Comment=Ascension P2P Cryptocurrency
+Comment[fr]=Ascension, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Ascension, eşten eşe kriptografik sanal para birimi
+Exec=ascension-qt %u
 Terminal=false
 Type=Application
-Icon=bitcoin128
-MimeType=x-scheme-handler/bitcoin;
+Icon=ascension128
+MimeType=x-scheme-handler/ascension;
 Categories=Office;Finance;
 EOF
 # change touch date when modifying desktop
-touch -a -m -t 201511100546 %{buildroot}%{_datadir}/applications/bitcoin-core.desktop
-%{_bindir}/desktop-file-validate %{buildroot}%{_datadir}/applications/bitcoin-core.desktop
+touch -a -m -t 201511100546 %{buildroot}%{_datadir}/applications/ascension-core.desktop
+%{_bindir}/desktop-file-validate %{buildroot}%{_datadir}/applications/ascension-core.desktop
 
 # KDE protocol - change the touch timestamp if modifying
 mkdir -p %{buildroot}%{_datadir}/kde4/services
-cat <<EOF > %{buildroot}%{_datadir}/kde4/services/bitcoin-core.protocol
+cat <<EOF > %{buildroot}%{_datadir}/kde4/services/ascension-core.protocol
 [Protocol]
-exec=bitcoin-qt '%u'
-protocol=bitcoin
+exec=ascension-qt '%u'
+protocol=ascension
 input=none
 output=none
 helper=true
@@ -297,16 +297,16 @@ makedir=false
 deleting=false
 EOF
 # change touch date when modifying protocol
-touch -a -m -t 201511100546 %{buildroot}%{_datadir}/kde4/services/bitcoin-core.protocol
+touch -a -m -t 201511100546 %{buildroot}%{_datadir}/kde4/services/ascension-core.protocol
 %endif
 
 # man pages
-install -D -p %{SOURCE20} %{buildroot}%{_mandir}/man1/bitcoind.1
-install -p %{SOURCE21} %{buildroot}%{_mandir}/man1/bitcoin-cli.1
+install -D -p %{SOURCE20} %{buildroot}%{_mandir}/man1/ascensiond.1
+install -p %{SOURCE21} %{buildroot}%{_mandir}/man1/ascension-cli.1
 %if %{_buildqt}
-install -p %{SOURCE22} %{buildroot}%{_mandir}/man1/bitcoin-qt.1
+install -p %{SOURCE22} %{buildroot}%{_mandir}/man1/ascension-qt.1
 %endif
-install -D -p %{SOURCE23} %{buildroot}%{_mandir}/man5/bitcoin.conf.5
+install -D -p %{SOURCE23} %{buildroot}%{_mandir}/man5/ascension.conf.5
 
 # nuke these, we do extensive testing of binaries in %%check before packaging
 rm -f %{buildroot}%{_bindir}/test_*
@@ -314,7 +314,7 @@ rm -f %{buildroot}%{_bindir}/test_*
 %check
 make check
 pushd src
-srcdir=. test/bitcoin-util-test.py
+srcdir=. test/ascension-util-test.py
 popd
 qa/pull-tester/rpc-tests.py -extended
 
@@ -323,35 +323,35 @@ qa/pull-tester/rpc-tests.py -extended
 %postun libs -p /sbin/ldconfig
 
 %pre server
-getent group bitcoin >/dev/null || groupadd -r bitcoin
-getent passwd bitcoin >/dev/null ||
-	useradd -r -g bitcoin -d /var/lib/bitcoin -s /sbin/nologin \
-	-c "Bitcoin wallet server" bitcoin
+getent group ascension >/dev/null || groupadd -r ascension
+getent passwd ascension >/dev/null ||
+	useradd -r -g ascension -d /var/lib/ascension -s /sbin/nologin \
+	-c "Ascension wallet server" ascension
 exit 0
 
 %post server
-%systemd_post bitcoin.service
+%systemd_post ascension.service
 # SELinux
 if [ `%{_sbindir}/sestatus |grep -c "disabled"` -eq 0 ]; then
 for selinuxvariant in %{selinux_variants}; do
-	%{_sbindir}/semodule -s ${selinuxvariant} -i %{_datadir}/selinux/${selinuxvariant}/bitcoin.pp &> /dev/null || :
+	%{_sbindir}/semodule -s ${selinuxvariant} -i %{_datadir}/selinux/${selinuxvariant}/ascension.pp &> /dev/null || :
 done
-%{_sbindir}/semanage port -a -t bitcoin_port_t -p tcp 8332
-%{_sbindir}/semanage port -a -t bitcoin_port_t -p tcp 8333
-%{_sbindir}/semanage port -a -t bitcoin_port_t -p tcp 18332
-%{_sbindir}/semanage port -a -t bitcoin_port_t -p tcp 18333
-%{_sbindir}/fixfiles -R bitcoin-server restore &> /dev/null || :
-%{_sbindir}/restorecon -R %{_localstatedir}/lib/bitcoin || :
+%{_sbindir}/semanage port -a -t ascension_port_t -p tcp 8332
+%{_sbindir}/semanage port -a -t ascension_port_t -p tcp 8333
+%{_sbindir}/semanage port -a -t ascension_port_t -p tcp 18332
+%{_sbindir}/semanage port -a -t ascension_port_t -p tcp 18333
+%{_sbindir}/fixfiles -R ascension-server restore &> /dev/null || :
+%{_sbindir}/restorecon -R %{_localstatedir}/lib/ascension || :
 fi
 
 %posttrans server
 %{_bindir}/systemd-tmpfiles --create
 
 %preun server
-%systemd_preun bitcoin.service
+%systemd_preun ascension.service
 
 %postun server
-%systemd_postun bitcoin.service
+%systemd_postun ascension.service
 # SELinux
 if [ $1 -eq 0 ]; then
 	if [ `%{_sbindir}/sestatus |grep -c "disabled"` -eq 0 ]; then
@@ -360,11 +360,11 @@ if [ $1 -eq 0 ]; then
 	%{_sbindir}/semanage port -d -p tcp 18332
 	%{_sbindir}/semanage port -d -p tcp 18333
 	for selinuxvariant in %{selinux_variants}; do
-		%{_sbindir}/semodule -s ${selinuxvariant} -r bitcoin &> /dev/null || :
+		%{_sbindir}/semodule -s ${selinuxvariant} -r ascension &> /dev/null || :
 	done
-	%{_sbindir}/fixfiles -R bitcoin-server restore &> /dev/null || :
-	[ -d %{_localstatedir}/lib/bitcoin ] && \
-		%{_sbindir}/restorecon -R %{_localstatedir}/lib/bitcoin &> /dev/null || :
+	%{_sbindir}/fixfiles -R ascension-server restore &> /dev/null || :
+	[ -d %{_localstatedir}/lib/ascension ] && \
+		%{_sbindir}/restorecon -R %{_localstatedir}/lib/ascension &> /dev/null || :
 	fi
 fi
 
@@ -375,16 +375,16 @@ rm -rf %{buildroot}
 %files core
 %defattr(-,root,root,-)
 %license COPYING db-%{bdbv}.NC-LICENSE
-%doc COPYING bitcoin.conf.example doc/README.md doc/bips.md doc/files.md doc/multiwallet-qt.md doc/reduce-traffic.md doc/release-notes.md doc/tor.md
-%attr(0755,root,root) %{_bindir}/bitcoin-qt
-%attr(0644,root,root) %{_datadir}/applications/bitcoin-core.desktop
-%attr(0644,root,root) %{_datadir}/kde4/services/bitcoin-core.protocol
+%doc COPYING ascension.conf.example doc/README.md doc/bips.md doc/files.md doc/multiwallet-qt.md doc/reduce-traffic.md doc/release-notes.md doc/tor.md
+%attr(0755,root,root) %{_bindir}/ascension-qt
+%attr(0644,root,root) %{_datadir}/applications/ascension-core.desktop
+%attr(0644,root,root) %{_datadir}/kde4/services/ascension-core.protocol
 %attr(0644,root,root) %{_datadir}/pixmaps/*.ico
 %attr(0644,root,root) %{_datadir}/pixmaps/*.bmp
 %attr(0644,root,root) %{_datadir}/pixmaps/*.svg
 %attr(0644,root,root) %{_datadir}/pixmaps/*.png
 %attr(0644,root,root) %{_datadir}/pixmaps/*.xpm
-%attr(0644,root,root) %{_mandir}/man1/bitcoin-qt.1*
+%attr(0644,root,root) %{_mandir}/man1/ascension-qt.1*
 %endif
 
 %files libs
@@ -406,32 +406,32 @@ rm -rf %{buildroot}
 %files server
 %defattr(-,root,root,-)
 %license COPYING db-%{bdbv}.NC-LICENSE
-%doc COPYING bitcoin.conf.example doc/README.md doc/REST-interface.md doc/bips.md doc/dnsseed-policy.md doc/files.md doc/reduce-traffic.md doc/release-notes.md doc/tor.md
-%attr(0755,root,root) %{_sbindir}/bitcoind
-%attr(0644,root,root) %{_tmpfilesdir}/bitcoin.conf
-%attr(0644,root,root) %{_unitdir}/bitcoin.service
-%dir %attr(0750,bitcoin,bitcoin) %{_sysconfdir}/bitcoin
-%dir %attr(0750,bitcoin,bitcoin) %{_localstatedir}/lib/bitcoin
-%config(noreplace) %attr(0600,root,root) %{_sysconfdir}/sysconfig/bitcoin
+%doc COPYING ascension.conf.example doc/README.md doc/REST-interface.md doc/bips.md doc/dnsseed-policy.md doc/files.md doc/reduce-traffic.md doc/release-notes.md doc/tor.md
+%attr(0755,root,root) %{_sbindir}/ascensiond
+%attr(0644,root,root) %{_tmpfilesdir}/ascension.conf
+%attr(0644,root,root) %{_unitdir}/ascension.service
+%dir %attr(0750,ascension,ascension) %{_sysconfdir}/ascension
+%dir %attr(0750,ascension,ascension) %{_localstatedir}/lib/ascension
+%config(noreplace) %attr(0600,root,root) %{_sysconfdir}/sysconfig/ascension
 %attr(0644,root,root) %{_datadir}/selinux/*/*.pp
-%attr(0644,root,root) %{_mandir}/man1/bitcoind.1*
-%attr(0644,root,root) %{_mandir}/man5/bitcoin.conf.5*
+%attr(0644,root,root) %{_mandir}/man1/ascensiond.1*
+%attr(0644,root,root) %{_mandir}/man5/ascension.conf.5*
 
 %files utils
 %defattr(-,root,root,-)
 %license COPYING
-%doc COPYING bitcoin.conf.example doc/README.md
-%attr(0755,root,root) %{_bindir}/bitcoin-cli
-%attr(0755,root,root) %{_bindir}/bitcoin-tx
-%attr(0755,root,root) %{_bindir}/bench_bitcoin
-%attr(0644,root,root) %{_mandir}/man1/bitcoin-cli.1*
-%attr(0644,root,root) %{_mandir}/man5/bitcoin.conf.5*
+%doc COPYING ascension.conf.example doc/README.md
+%attr(0755,root,root) %{_bindir}/ascension-cli
+%attr(0755,root,root) %{_bindir}/ascension-tx
+%attr(0755,root,root) %{_bindir}/bench_ascension
+%attr(0644,root,root) %{_mandir}/man1/ascension-cli.1*
+%attr(0644,root,root) %{_mandir}/man5/ascension.conf.5*
 
 
 
 %changelog
 * Fri Feb 26 2016 Alice Wonder <buildmaster@librelamp.com> - 0.12.0-2
-- Rename Qt package from bitcoin to bitcoin-core
+- Rename Qt package from ascension to ascension-core
 - Make building of the Qt package optional
 - When building the Qt package, default to Qt5 but allow building
 -  against Qt4
@@ -441,4 +441,4 @@ rm -rf %{buildroot}
 - Initial spec file for 0.12.0 release
 
 # This spec file is written from scratch but a lot of the packaging decisions are directly
-# based upon the 0.11.2 package spec file from https://www.ringingliberty.com/bitcoin/
+# based upon the 0.11.2 package spec file from https://www.ringingliberty.com/ascension/

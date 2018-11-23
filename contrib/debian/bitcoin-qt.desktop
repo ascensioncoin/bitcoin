@@ -1,13 +1,13 @@
 [Desktop Entry]
 Encoding=UTF-8
-Name=Bitcoin Core
-Comment=Connect to the Bitcoin P2P Network
-Comment[de]=Verbinde mit dem Bitcoin peer-to-peer Netzwerk
-Comment[fr]=Bitcoin, monnaie virtuelle cryptographique pair à pair
-Comment[tr]=Bitcoin, eşten eşe kriptografik sanal para birimi
-Exec=bitcoin-qt %u
+Name=Ascension Core
+Comment=Connect to the Ascension P2P Network
+Comment[de]=Verbinde mit dem Ascension peer-to-peer Netzwerk
+Comment[fr]=Ascension, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Ascension, eşten eşe kriptografik sanal para birimi
+Exec=ascension-qt %u
 Terminal=false
 Type=Application
-Icon=bitcoin128
-MimeType=x-scheme-handler/bitcoin;
+Icon=ascension128
+MimeType=x-scheme-handler/ascension;
 Categories=Office;Finance;
