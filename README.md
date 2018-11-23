@@ -3,20 +3,19 @@ Ascension Core integration/staging tree
 
 [![Build Status](https://travis-ci.org/ascension/ascension.svg?branch=master)](https://travis-ci.org/ascension/ascension)
 
-https://bitcoincore.org
+https://ascensioncoin.org
 
-What is Ascension?
+What is Ascension Coin?
 ----------------
 
-Ascension is an experimental digital currency that enables instant payments to
+Ascension coin is an experimental digital currency that enables instant payments to
 anyone, anywhere in the world. Ascension uses peer-to-peer technology to operate
 with no central authority: managing transactions and issuing money are carried
 out collectively by the network. Ascension Core is the name of open source
 software which enables the use of this currency.
 
 For more information, as well as an immediately useable, binary version of
-the Ascension Core software, see https://bitcoin.org/en/download, or read the
-[original whitepaper](https://bitcoincore.org/ascension.pdf).
+the Ascension Core software, see https://ascensioncoin.org/en/download.
 
 License
 -------
@@ -36,8 +35,6 @@ The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md).
 The developer [mailing list](https://lists.linuxfoundation.org/mailman/listinfo/ascension-dev)
 should be used to discuss complicated or controversial changes before working
 on a patch set.
-
-Developer IRC can be found on Freenode at #ascension-core-dev.
 
 Testing
 -------
@@ -79,3 +76,83 @@ Translations are periodically pulled from Transifex and merged into the git repo
 pull from Transifex would automatically overwrite them again.
 
 Translators should also subscribe to the [mailing list](https://groups.google.com/forum/#!forum/ascension-translators).
+
+
+
+[Dev info] Forking from Bitcoin
+------------
+
+This repository is a clone of https://github.com/bitcoin/bitcoin/tree/0.13.
+
+Batch renaming steps:
+1) Used Atom for case-sensitive replacing in this order:
+Bitcoin
+Bitcoin
+BITCOIN
+BTC
+
+2) And then fix some back:
+```
+The Ascension Core developers
+The Ascension developers
+#endif // ASCENSION_
+#ifndef ASCENSION_
+#define ASCENSION_
+#include "ascension
+ascension-config.h
+AscensionUnits
+.ascension.
+CAscensionAddress
+CAscensionSecret
+CAscensionExtKeyBase
+ASCENSION_CONF_FILENAME
+ascensiond-res.rc
+https://github.com/ascension/ascension/
+https://github.com/ascension/bips/
+https://ascension
+_ASCENSION
+ASCENSION_
+_ascension.
+ascension.qrc
+libascension
+ascensionconsensus
+AscensionGUI
+AscensionAddress
+AscensionAmount
+"ascension-core"
+Ascension Core Developers
+<name>ascension-core</name>
+```
+
+3) Exclude folders.
+Discovered by comparing bitcoin and Litecoin sources at the same branch (0.13)
+Overwrite these files with original contents:
+```
+.tx
+build-aux
+contrib/init
+contrib/verify-commits
+cotrib/verifybinaries
+depends
+doc/release-notes
+doc/gitian-building
+All subfolders in “src” but “qt”, “rpc”, “test”, “wallet”
+```
+
+4) Some more replacements
+```
+"Satoshi" -> “Ascension”
+github.com/ascension/ascension  ->  github.com/ascensioncoin/AscensionCoin
+```
+
+
+TODO:
+
+1) Fix filenames/code (that got broken by batch renaming)
+2) Add ASN images
+3) Verify all compiles and works with BTC blockchain, but UI shows ASN
+4) Add ASN chain params, ports
+5) Add qubit hashing
+6) Add POS
+7) Add AscendChat
+8) Add AscendSend ?
