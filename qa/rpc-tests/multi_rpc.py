@@ -7,14 +7,14 @@
 # Test mulitple rpc user config option rpcauth
 #
 
-from test_framework.test_framework import AscensionTestFramework
+from test_framework.test_framework import BitcoinTestFramework
 from test_framework.util import str_to_b64str, assert_equal
 
 import os
 import http.client
 import urllib.parse
 
-class HTTPBasicsTest (AscensionTestFramework):
+class HTTPBasicsTest (BitcoinTestFramework):
 
     def __init__(self):
         super().__init__()

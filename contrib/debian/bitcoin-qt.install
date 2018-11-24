@@ -1,6 +1,6 @@
 usr/local/bin/ascension-qt usr/bin
-share/pixmaps/ascension32.xpm usr/share/pixmaps
-share/pixmaps/ascension16.xpm usr/share/pixmaps
-share/pixmaps/ascension128.png usr/share/pixmaps
+share/pixmaps/bitcoin32.xpm usr/share/pixmaps
+share/pixmaps/bitcoin16.xpm usr/share/pixmaps
+share/pixmaps/bitcoin128.png usr/share/pixmaps
 debian/ascension-qt.desktop usr/share/applications
 debian/ascension-qt.protocol usr/share/kde4/services/

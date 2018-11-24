@@ -1,7 +1,7 @@
 Ascension Core integration/staging tree
 =====================================
 
-[![Build Status](https://travis-ci.org/ascension/ascension.svg?branch=master)](https://travis-ci.org/ascension/ascension)
+[![Build Status](https://travis-ci.org/ascension/bitcoin.svg?branch=master)](https://travis-ci.org/ascension/ascension)
 
 https://ascensioncoin.org
 
@@ -67,7 +67,7 @@ Translations
 ------------
 
 Changes to translations as well as new translations can be submitted to
-[Ascension Core's Transifex page](https://www.transifex.com/projects/p/ascension/).
+[Ascension Core's Transifex page](https://www.transifex.com/projects/p/bitcoin/).
 
 Translations are periodically pulled from Transifex and merged into the git repository. See the
 [translation process](doc/translation_process.md) for details on how this works.
@@ -86,12 +86,16 @@ This repository is a clone of https://github.com/bitcoin/bitcoin/tree/0.13.
 
 Batch renaming steps:
 1) Used Atom for case-sensitive replacing in this order:
-Bitcoin
+
+```
+bitcoin
 Bitcoin
 BITCOIN
 BTC
+```
 
 2) And then fix some back:
+
 ```
 The Ascension Core developers
 The Ascension developers
@@ -122,6 +126,14 @@ AscensionAmount
 "ascension-core"
 Ascension Core Developers
 <name>ascension-core</name>
+AscensionTestFramework
+qt/locale/bitcoin
+moc_ascension
+qt/ascension
+res/ascension
+locale/bitcoin
+test_ascension
+test/ascension
 ```
 
 3) Exclude folders.
@@ -141,8 +153,10 @@ All subfolders in “src” but “qt”, “rpc”, “test”, “wallet”
 
 4) Some more replacements
 ```
-"Satoshi" -> “Ascension”
+"Satoshi"  ->  “Ascension”
 github.com/ascension/ascension  ->  github.com/ascensioncoin/AscensionCoin
+ASCENSIONS -> ASCENSION COINS
+ascensions -> ascension coins
 ```
 
 

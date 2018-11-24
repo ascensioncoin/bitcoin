@@ -7,7 +7,7 @@ Source: https://github.com/ascensioncoin/AscensionCoin
 Files: *
 Copyright: 2009-2016, Bitcoin Core Developers
 License: Expat
-Comment: The Bitcoin Core Developers encompasses the current developers listed on ascension.org,
+Comment: The Bitcoin Core Developers encompasses the current developers listed on ascensioncoin.org,
          as well as the numerous contributors to the project.
 
 Files: debian/*
@@ -75,9 +75,9 @@ License: Expat
 Comment: Modifications of Stephan Hutchings Typicons
 
 Files: src/qt/res/icons/about.png
-       src/qt/res/icons/ascension.*
+       src/qt/res/icons/bitcoin.*
        share/pixmaps/ascension*
-       src/qt/res/src/ascension.svg
+       src/qt/res/src/bitcoin.svg
 Copyright: Bitboy, Jonas Schnelli
 License: public-domain
 Comment: Site: https://bitcointalk.org/?topic=1756.0

@@ -8,11 +8,11 @@
 import tempfile
 import traceback
 
-from test_framework.test_framework import AscensionTestFramework
+from test_framework.test_framework import BitcoinTestFramework
 from test_framework.util import *
 from test_framework.netutil import *
 
-class RPCBindTest(AscensionTestFramework):
+class RPCBindTest(BitcoinTestFramework):
 
     def __init__(self):
         super().__init__()

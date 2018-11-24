@@ -5,10 +5,10 @@
 
 # Test mempool limiting together/eviction with the wallet
 
-from test_framework.test_framework import AscensionTestFramework
+from test_framework.test_framework import BitcoinTestFramework
 from test_framework.util import *
 
-class MempoolLimitTest(AscensionTestFramework):
+class MempoolLimitTest(BitcoinTestFramework):
 
     def setup_network(self):
         self.nodes = []

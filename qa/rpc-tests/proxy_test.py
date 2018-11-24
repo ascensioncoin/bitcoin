@@ -6,7 +6,7 @@
 import socket
 
 from test_framework.socks5 import Socks5Configuration, Socks5Command, Socks5Server, AddressType
-from test_framework.test_framework import AscensionTestFramework
+from test_framework.test_framework import BitcoinTestFramework
 from test_framework.util import *
 from test_framework.netutil import test_ipv6_local
 '''
@@ -34,7 +34,7 @@ addnode connect to generic DNS name
 '''
 
 
-class ProxyTest(AscensionTestFramework):
+class ProxyTest(BitcoinTestFramework):
     def __init__(self):
         super().__init__()
         self.num_nodes = 4

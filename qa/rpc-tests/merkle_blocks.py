@@ -7,10 +7,10 @@
 # Test merkleblock fetch/validation
 #
 
-from test_framework.test_framework import AscensionTestFramework
+from test_framework.test_framework import BitcoinTestFramework
 from test_framework.util import *
 
-class MerkleBlockTest(AscensionTestFramework):
+class MerkleBlockTest(BitcoinTestFramework):
 
     def __init__(self):
         super().__init__()

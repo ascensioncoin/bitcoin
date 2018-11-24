@@ -5,10 +5,10 @@
 
 # Exercise the wallet keypool, and interaction with wallet encryption/locking
 
-from test_framework.test_framework import AscensionTestFramework
+from test_framework.test_framework import BitcoinTestFramework
 from test_framework.util import *
 
-class KeyPoolTest(AscensionTestFramework):
+class KeyPoolTest(BitcoinTestFramework):
 
     def run_test(self):
         nodes = self.nodes

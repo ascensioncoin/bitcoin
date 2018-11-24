@@ -8,6 +8,6 @@ Comment[tr]=Ascension, eşten eşe kriptografik sanal para birimi
 Exec=ascension-qt %u
 Terminal=false
 Type=Application
-Icon=ascension128
+Icon=bitcoin128
 MimeType=x-scheme-handler/ascension;
 Categories=Office;Finance;

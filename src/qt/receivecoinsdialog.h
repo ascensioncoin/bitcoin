@@ -27,7 +27,7 @@ QT_BEGIN_NAMESPACE
 class QModelIndex;
 QT_END_NAMESPACE
 
-/** Dialog for requesting payment of ascensions */
+/** Dialog for requesting payment of ascension coins */
 class ReceiveCoinsDialog : public QDialog
 {
     Q_OBJECT

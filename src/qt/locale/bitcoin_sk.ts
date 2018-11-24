@@ -171,7 +171,7 @@
     </message>
     <message>
         <source>Send coins to a Ascension address</source>
-        <translation>Poslať ascensions na adresu</translation>
+        <translation>Poslať ascension coins na adresu</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -1599,7 +1599,7 @@
         <translation>Odstrániť túto položku</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive less ascensions than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive less ascension coins than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
         <translation>Poplatok sa odpočíta od čiastky, ktorú odosielate. Príjemca dostane menej ascensionov ako zadáte. Ak je vybraných viacero príjemcov, poplatok je rozdelený rovným dielom.</translation>
     </message>
     <message>

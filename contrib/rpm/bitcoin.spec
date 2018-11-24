@@ -24,19 +24,19 @@ URL:		https://bitcoin.org/
 Source0:	https://bitcoin.org/bin/ascension-core-%{version}/ascension-%{version}.tar.gz
 Source1:	http://download.oracle.com/berkeley-db/db-%{bdbv}.NC.tar.gz
 
-Source10:	https://raw.githubusercontent.com/ascension/ascension/v%{version}/contrib/debian/examples/ascension.conf
+Source10:	https://raw.githubusercontent.com/bitcoin/bitcoin/v%{version}/contrib/debian/examples/ascension.conf
 
 #man pages
-Source20:	https://raw.githubusercontent.com/ascension/ascension/v%{version}/contrib/debian/manpages/ascensiond.1
-Source21:	https://raw.githubusercontent.com/ascension/ascension/v%{version}/contrib/debian/manpages/ascension-cli.1
-Source22:	https://raw.githubusercontent.com/ascension/ascension/v%{version}/contrib/debian/manpages/ascension-qt.1
-Source23:	https://raw.githubusercontent.com/ascension/ascension/v%{version}/contrib/debian/manpages/ascension.conf.5
+Source20:	https://raw.githubusercontent.com/bitcoin/bitcoin/v%{version}/contrib/debian/manpages/ascensiond.1
+Source21:	https://raw.githubusercontent.com/bitcoin/bitcoin/v%{version}/contrib/debian/manpages/ascension-cli.1
+Source22:	https://raw.githubusercontent.com/bitcoin/bitcoin/v%{version}/contrib/debian/manpages/ascension-qt.1
+Source23:	https://raw.githubusercontent.com/bitcoin/bitcoin/v%{version}/contrib/debian/manpages/ascension.conf.5
 
 #selinux
-Source30:	https://raw.githubusercontent.com/ascension/ascension/v%{version}/contrib/rpm/ascension.te
+Source30:	https://raw.githubusercontent.com/bitcoin/bitcoin/v%{version}/contrib/rpm/ascension.te
 # Source31 - what about ascension-tx and bench_ascension ???
-Source31:	https://raw.githubusercontent.com/ascension/ascension/v%{version}/contrib/rpm/ascension.fc
-Source32:	https://raw.githubusercontent.com/ascension/ascension/v%{version}/contrib/rpm/ascension.if
+Source31:	https://raw.githubusercontent.com/bitcoin/bitcoin/v%{version}/contrib/rpm/ascension.fc
+Source32:	https://raw.githubusercontent.com/bitcoin/bitcoin/v%{version}/contrib/rpm/ascension.if
 
 Source100:	https://upload.wikimedia.org/wikipedia/commons/4/46/Ascension.svg
 
@@ -57,7 +57,7 @@ Patch0:		ascension-0.12.0-libressl.patch
 %description
 Ascension is a digital cryptographic currency that uses peer-to-peer technology to
 operate with no central authority or banks; managing transactions and the
-issuing of ascensions is carried out collectively by the network.
+issuing of ascension coins is carried out collectively by the network.
 
 %if %{_buildqt}
 %package core
@@ -82,7 +82,7 @@ BuildRequires:	%{_bindir}/convert
 %description core
 Ascension is a digital cryptographic currency that uses peer-to-peer technology to
 operate with no central authority or banks; managing transactions and the
-issuing of ascensions is carried out collectively by the network.
+issuing of ascension coins is carried out collectively by the network.
 
 This package contains the Qt based graphical client and node. If you are looking
 to run a Ascension wallet, this is probably the package you want.
@@ -244,20 +244,20 @@ done
 
 %if %{_buildqt}
 # qt icons
-install -D -p share/pixmaps/ascension.ico %{buildroot}%{_datadir}/pixmaps/ascension.ico
+install -D -p share/pixmaps/bitcoin.ico %{buildroot}%{_datadir}/pixmaps/bitcoin.ico
 install -p share/pixmaps/nsis-header.bmp %{buildroot}%{_datadir}/pixmaps/
 install -p share/pixmaps/nsis-wizard.bmp %{buildroot}%{_datadir}/pixmaps/
-install -p %{SOURCE100} %{buildroot}%{_datadir}/pixmaps/ascension.svg
-%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/ascension16.png -w16 -h16
-%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/ascension32.png -w32 -h32
-%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/ascension64.png -w64 -h64
-%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/ascension128.png -w128 -h128
-%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/ascension256.png -w256 -h256
-%{_bindir}/convert -resize 16x16 %{buildroot}%{_datadir}/pixmaps/ascension256.png %{buildroot}%{_datadir}/pixmaps/ascension16.xpm
-%{_bindir}/convert -resize 32x32 %{buildroot}%{_datadir}/pixmaps/ascension256.png %{buildroot}%{_datadir}/pixmaps/ascension32.xpm
-%{_bindir}/convert -resize 64x64 %{buildroot}%{_datadir}/pixmaps/ascension256.png %{buildroot}%{_datadir}/pixmaps/ascension64.xpm
-%{_bindir}/convert -resize 128x128 %{buildroot}%{_datadir}/pixmaps/ascension256.png %{buildroot}%{_datadir}/pixmaps/ascension128.xpm
-%{_bindir}/convert %{buildroot}%{_datadir}/pixmaps/ascension256.png %{buildroot}%{_datadir}/pixmaps/ascension256.xpm
+install -p %{SOURCE100} %{buildroot}%{_datadir}/pixmaps/bitcoin.svg
+%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/bitcoin16.png -w16 -h16
+%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/bitcoin32.png -w32 -h32
+%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/bitcoin64.png -w64 -h64
+%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/bitcoin128.png -w128 -h128
+%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/bitcoin256.png -w256 -h256
+%{_bindir}/convert -resize 16x16 %{buildroot}%{_datadir}/pixmaps/bitcoin256.png %{buildroot}%{_datadir}/pixmaps/bitcoin16.xpm
+%{_bindir}/convert -resize 32x32 %{buildroot}%{_datadir}/pixmaps/bitcoin256.png %{buildroot}%{_datadir}/pixmaps/bitcoin32.xpm
+%{_bindir}/convert -resize 64x64 %{buildroot}%{_datadir}/pixmaps/bitcoin256.png %{buildroot}%{_datadir}/pixmaps/bitcoin64.xpm
+%{_bindir}/convert -resize 128x128 %{buildroot}%{_datadir}/pixmaps/bitcoin256.png %{buildroot}%{_datadir}/pixmaps/bitcoin128.xpm
+%{_bindir}/convert %{buildroot}%{_datadir}/pixmaps/bitcoin256.png %{buildroot}%{_datadir}/pixmaps/bitcoin256.xpm
 touch %{buildroot}%{_datadir}/pixmaps/*.png -r %{SOURCE100}
 touch %{buildroot}%{_datadir}/pixmaps/*.xpm -r %{SOURCE100}
 
@@ -273,7 +273,7 @@ Comment[tr]=Ascension, eşten eşe kriptografik sanal para birimi
 Exec=ascension-qt %u
 Terminal=false
 Type=Application
-Icon=ascension128
+Icon=bitcoin128
 MimeType=x-scheme-handler/ascension;
 Categories=Office;Finance;
 EOF
@@ -314,7 +314,7 @@ rm -f %{buildroot}%{_bindir}/test_*
 %check
 make check
 pushd src
-srcdir=. test/ascension-util-test.py
+srcdir=. test/bitcoin-util-test.py
 popd
 qa/pull-tester/rpc-tests.py -extended
 

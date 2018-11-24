@@ -5,8 +5,8 @@ src/ascension
 src/ascensiond
 src/ascension-cli
 src/ascension-tx
-src/test/test_ascension
-src/qt/test/test_ascension-qt
+src/test/test_bitcoin
+src/qt/test/test_bitcoin-qt
 
 # autoreconf
 Makefile.in

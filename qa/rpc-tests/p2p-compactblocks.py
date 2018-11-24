@@ -4,7 +4,7 @@
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 from test_framework.mininode import *
-from test_framework.test_framework import AscensionTestFramework
+from test_framework.test_framework import BitcoinTestFramework
 from test_framework.util import *
 from test_framework.blocktools import create_block, create_coinbase, add_witness_commitment
 from test_framework.siphash import siphash256
@@ -106,7 +106,7 @@ class TestNode(SingleNodeConnCB):
             return (block_hash in self.set_announced_blockhashes)
         return wait_until(received_hash, timeout=timeout)
 
-class CompactBlocksTest(AscensionTestFramework):
+class CompactBlocksTest(BitcoinTestFramework):
     def __init__(self):
         super().__init__()
         self.setup_clean_chain = True

@@ -29,7 +29,7 @@ from .util import (
 from .authproxy import JSONRPCException
 
 
-class AscensionTestFramework(object):
+class BitcoinTestFramework(object):
 
     def __init__(self):
         self.num_nodes = 4
@@ -185,7 +185,7 @@ class AscensionTestFramework(object):
 # 2 binaries: 1 test binary, 1 ref binary
 # n>2 binaries: 1 test binary, n-1 ref binaries
 
-class ComparisonTestFramework(AscensionTestFramework):
+class ComparisonTestFramework(BitcoinTestFramework):
 
     def __init__(self):
         super().__init__()

@@ -17,7 +17,7 @@ than:
       interface.
 
 For a description of arguments recognized by test scripts, see
-`qa/pull-tester/test_framework/test_framework.py:AscensionTestFramework.main`.
+`qa/pull-tester/test_framework/test_framework.py:BitcoinTestFramework.main`.
 
 """
 

@@ -7,11 +7,11 @@
 # Exercise API with -disablewallet.
 #
 
-from test_framework.test_framework import AscensionTestFramework
+from test_framework.test_framework import BitcoinTestFramework
 from test_framework.util import *
 
 
-class DisableWalletTest (AscensionTestFramework):
+class DisableWalletTest (BitcoinTestFramework):
 
     def __init__(self):
         super().__init__()

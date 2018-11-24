@@ -28,7 +28,7 @@ QT_END_NAMESPACE
 
 const int defaultConfirmTarget = 25;
 
-/** Dialog for sending ascensions */
+/** Dialog for sending ascension coins */
 class SendCoinsDialog : public QDialog
 {
     Q_OBJECT

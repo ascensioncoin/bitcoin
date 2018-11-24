@@ -368,7 +368,7 @@ ascension_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 ascension_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-ascension_cli_SOURCES += ascension-cli-res.rc
+ascension_cli_SOURCES += bitcoin-cli-res.rc
 endif
 
 ascension_cli_LDADD = \
@@ -387,7 +387,7 @@ ascension_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 ascension_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-ascension_tx_SOURCES += ascension-tx-res.rc
+ascension_tx_SOURCES += bitcoin-tx-res.rc
 endif
 
 ascension_tx_LDADD = \

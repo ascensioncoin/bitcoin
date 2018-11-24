@@ -3,7 +3,7 @@
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-from test_framework.test_framework import AscensionTestFramework
+from test_framework.test_framework import BitcoinTestFramework
 from test_framework.util import (start_nodes, start_node, assert_equal, ascensiond_processes)
 
 
@@ -52,7 +52,7 @@ def read_dump(file_name, addrs, hd_master_addr_old):
         return found_addr, found_addr_chg, found_addr_rsv, hd_master_addr_ret
 
 
-class WalletDumpTest(AscensionTestFramework):
+class WalletDumpTest(BitcoinTestFramework):
 
     def __init__(self):
         super().__init__()

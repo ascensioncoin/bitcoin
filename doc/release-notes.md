@@ -1,6 +1,6 @@
 Ascension Core version 0.13.x is now available from:
 
-  <https://bitcoin.org/bin/ascension-core-0.13.x/>
+  <https://bitcoin.org/bin/bitcoin-core-0.13.x/>
 
 This is a new minor version release, including various bugfixes and
 performance improvements, as well as updated translations.
@@ -62,4 +62,4 @@ Thanks to everyone who directly contributed to this release:
 
 [to be filled in at release]
 
-As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/ascension/).
+As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/bitcoin/).

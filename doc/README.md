@@ -3,7 +3,7 @@ Ascension Core 0.13.2
 
 Setup
 ---------------------
-[Ascension Core](http://ascension.org/en/download) is the original Ascension client and it builds the backbone of the network. However, it downloads and stores the entire history of Ascension transactions (which is currently several GBs); depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
+[Ascension Core](http://ascensioncoin.org/en/download) is the original Ascension client and it builds the backbone of the network. However, it downloads and stores the entire history of Ascension transactions (which is currently several GBs); depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
 
 Running
 ---------------------
@@ -26,10 +26,10 @@ Drag Ascension-Core to your applications folder, and then run Ascension-Core.
 
 ### Need Help?
 
-* See the documentation at the [Ascension Wiki](https://en.bitcoin.it/wiki/Main_Page)
+* See the documentation at the [Ascension Wiki](https://github.com/ascensioncoin/AscensionCoin/wiki)
 for help and more information.
 * Ask for help on [#ascension](http://webchat.freenode.net?channels=ascension) on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net?channels=ascension).
-* Ask for help on the [AscensionTalk](https://bitcointalk.org/) forums, in the [Technical Support board](https://bitcointalk.org/index.php?board=4.0).
+* Ask for help on the [BitcoinTalk](https://bitcointalk.org/) forums, in the [Ascension coin board](http://bitcointalk.org/index.php?topic=5064849).
 
 Building
 ---------------------
@@ -49,7 +49,7 @@ The Ascension repo's [root README](/README.md) contains relevant information on 
 - [Multiwallet Qt Development](multiwallet-qt.md)
 - [Release Notes](release-notes.md)
 - [Release Process](release-process.md)
-- [Source Code Documentation (External Link)](https://dev.visucore.com/ascension/doxygen/)
+- [Source Code Documentation (External Link)](https://dev.visucore.com/bitcoin/doxygen/)
 - [Translation Process](translation_process.md)
 - [Translation Strings Policy](translation_strings_policy.md)
 - [Unit Tests](unit-tests.md)
@@ -60,7 +60,7 @@ The Ascension repo's [root README](/README.md) contains relevant information on 
 - [Benchmarking](benchmarking.md)
 
 ### Resources
-* Discuss on the [AscensionTalk](https://bitcointalk.org/) forums, in the [Development & Technical Discussion board](https://bitcointalk.org/index.php?board=6.0).
+* Discuss on the [BitcoinTalk](https://bitcointalk.org/) forums, in the [Ascension coin board](http://bitcointalk.org/index.php?topic=5064849).
 * Discuss project-specific development on #ascension-core-dev on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net/?channels=ascension-core-dev).
 * Discuss general Ascension development on #ascension-dev on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net/?channels=ascension-dev).
 

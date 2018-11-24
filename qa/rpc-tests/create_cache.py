@@ -5,12 +5,12 @@
 
 #
 # Helper script to create the cache
-# (see AscensionTestFramework.setup_chain)
+# (see BitcoinTestFramework.setup_chain)
 #
 
-from test_framework.test_framework import AscensionTestFramework
+from test_framework.test_framework import BitcoinTestFramework
 
-class CreateCache(AscensionTestFramework):
+class CreateCache(BitcoinTestFramework):
 
     def __init__(self):
         super().__init__()

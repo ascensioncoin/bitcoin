@@ -11,7 +11,7 @@ the same, tested dependencies are used and statically built into the executable.
 Multiple developers build the source code by following a specific descriptor
 ("recipe"), cryptographically sign the result, and upload the resulting signature.
 These results are compared and only if they match, the build is accepted and uploaded
-to ascension.org.
+to ascensioncoin.org.
 
 More independent Gitian builders are needed, which is why this guide exists.
 It is preferred you follow these steps yourself instead of using someone else's
@@ -41,7 +41,7 @@ Debian Linux was chosen as the host distribution because it has a lightweight in
 Any kind of virtualization can be used, for example:
 - [VirtualBox](https://www.virtualbox.org/) (covered by this guide)
 - [KVM](http://www.linux-kvm.org/page/Main_Page)
-- [LXC](https://linuxcontainers.org/), see also [Gitian host docker container](https://github.com/gdm85/tenku/tree/master/docker/gitian-ascension-host/README.md).
+- [LXC](https://linuxcontainers.org/), see also [Gitian host docker container](https://github.com/gdm85/tenku/tree/master/docker/gitian-bitcoin-host/README.md).
 
 You can also install Gitian on actual hardware instead of using virtualization.
 
@@ -441,7 +441,7 @@ Then when building, override the remote URLs that gbuild would otherwise pull fr
 ```bash
 
 cd /some/root/path/
-git clone https://github.com/ascension-core/ascension-detached-sigs.git
+git clone https://github.com/bitcoin-core/bitcoin-detached-sigs.git
 
 ASNPATH=/some/root/path/ascension
 SIGPATH=/some/root/path/ascension-detached-sigs
@@ -461,9 +461,9 @@ When you execute `gsign` you will get an error from GPG, which can be ignored. C
 in `gitian.sigs` to your signing machine and do
 
 ```bash
-    gpg --detach-sign ${VERSION}-linux/${SIGNER}/ascension-linux-build.assert
-    gpg --detach-sign ${VERSION}-win/${SIGNER}/ascension-win-build.assert
-    gpg --detach-sign ${VERSION}-osx-unsigned/${SIGNER}/ascension-osx-build.assert
+    gpg --detach-sign ${VERSION}-linux/${SIGNER}/bitcoin-linux-build.assert
+    gpg --detach-sign ${VERSION}-win/${SIGNER}/bitcoin-win-build.assert
+    gpg --detach-sign ${VERSION}-osx-unsigned/${SIGNER}/bitcoin-osx-build.assert
 ```
 
 This will create the `.sig` files that can be committed together with the `.assert` files to assert your
@@ -473,5 +473,5 @@ Uploading signatures
 ---------------------
 
 After building and signing you can push your signatures (both the `.assert` and `.assert.sig` files) to the
-[ascension-core/gitian.sigs](https://github.com/ascension-core/gitian.sigs/) repository, or if that's not possible create a pull
+[ascension-core/gitian.sigs](https://github.com/bitcoin-core/gitian.sigs/) repository, or if that's not possible create a pull
 request. You can also mail the files to Wladimir (laanwj@gmail.com) and he will commit them.
