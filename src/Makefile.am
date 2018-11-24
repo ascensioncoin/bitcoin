@@ -337,7 +337,7 @@ nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
 # ascensiond binary #
-ascensiond_SOURCES = ascensiond.cpp
+ascensiond_SOURCES = bitcoind.cpp
 ascensiond_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 ascensiond_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 ascensiond_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
@@ -362,7 +362,7 @@ ascensiond_LDADD = \
 ascensiond_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
 
 # ascension-cli binary #
-ascension_cli_SOURCES = ascension-cli.cpp
+ascension_cli_SOURCES = bitcoin-cli.cpp
 ascension_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
 ascension_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 ascension_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
@@ -381,7 +381,7 @@ ascension_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
 #
 
 # ascension-tx binary #
-ascension_tx_SOURCES = ascension-tx.cpp
+ascension_tx_SOURCES = bitcoin-tx.cpp
 ascension_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 ascension_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 ascension_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
